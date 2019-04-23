@@ -1,0 +1,6 @@
+1;Alpargatas;Nike;36;Azul;49.0
+2;Chancla;Adidas;38;Marron;30.0
+3;Sandalia;Army;43;Blanco;45.0
+4;Running;Nike;38;Gris y Negro;150.0
+5;Casuales;Jupiter;43;Negro;349.0
+6;Bailarina;Armani;37;Rosado;69.4
