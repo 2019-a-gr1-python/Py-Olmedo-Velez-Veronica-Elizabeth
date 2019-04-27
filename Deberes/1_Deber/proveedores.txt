@@ -1,0 +1,4 @@
+1;1;Cabarvill;Quito;3495030
+2;1;Nike;Quito;3495030
+3;2;Ecuamontajes;Cuenca;34950304;2;Armani;Roma;4579813
+4;2;Zara;Madrid;3564982

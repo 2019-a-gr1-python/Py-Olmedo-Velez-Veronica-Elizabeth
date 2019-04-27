@@ -7,15 +7,8 @@ def imprimir_encabezado_zapatos():
 
 def imprimir_fila_zapato(zapato):
     print('%(codigo)-10s%(categoria)-20s%(marca)-20s%(talla)-15s%(color)-15s%(precio)-20s' % zapato)
-    
-def imprimir_encabezado_proveedores():
-    print("\n**************************************************************************")
-    print('%-10s%-10s%-20s%-15s%-15s' % ('Codigo', 'Id', 'Nombre', 'Ciudad', 'Teléfono'))
-    print("**************************************************************************")
 
-def imprimir_fila_proveedor(proveedor):
-    print('%(codigo)-10s%(cod)-10s%(nombre)-20s%(cuidad)-15s%(telf)-15s' % proveedor)
-       
+
 def mostrar_lista_zapatos():
     print("\n***************************")
     print("*    Lista de zapatos:    *")
@@ -24,26 +17,6 @@ def mostrar_lista_zapatos():
     imprimir_encabezado_zapatos()
     for zapato in lista:
         imprimir_fila_zapato(zapato)
-    opciones(opciones)    
-    
-def opciones (opcion):
-    while opcion != 0:
-        print("\n***************************")
-        print("*       Opciones:         *")
-        print("***************************")
-        print("1.- Ordenar la lista")
-        print("2.- Mostrar lista de proveedores")
-        print("3.- Añadir proveedor")
-        print("0.- Salir")
-        read = input("Ingrese una opción: ")
-        if (read.isnumeric()):
-            opcion = int(read)
-        try:
-            accion(opcion)()
-        except TypeError:
-                    print(f'Option {opcion}')       
-                
-def ordenar():
     ordenar = True
     while (ordenar):
        respuesta = input("\nDesea ordenar la lista por medio de algún parámetro (Yes/No): ")
@@ -64,7 +37,6 @@ def ordenar():
            print("4.- Color")
            print("5.- Precio")
            llave = input('Ingrese una opción: ')
-           lista = funciones_zapatos.obtener_lista_zapatos()
            def llaves(value):
                try:
                    return {
@@ -91,26 +63,6 @@ def ordenar():
        else:
            ordenar = False
 
-def mostrar_lista_proveedores():
-    print("\n******************************")
-    print("*    Lista de proveedores:   *")
-    print("******************************")
-    lista = funciones_zapatos.obtener_lista_proveedores()
-    imprimir_encabezado_proveedores()
-    for proveedor in lista:
-        imprimir_fila_proveedor(proveedor)
-
-def accion(value):
-    try:
-        return {
-            0: None,
-            1: ordenar,
-            2: mostrar_lista_proveedores,
-            3: funciones_zapatos.anadir_proveedor
-        }[value]
-    except KeyError:
-        print("No existe esta acción")
-              
 # mostar interfaz para la busqueda de datos
 def buscar_zapato():
     print("\n***************************")
@@ -192,8 +144,48 @@ def acciones(value):
     except KeyError:
         print("No existe esta acción")
 
+        
+def accion(value):
+    try:
+        return {
+            0: None,
+            1: funciones_zapatos.anadir_user,
+            2: logearse
+        }[value]
+    except KeyError:
+        print("No existe esta acción")
+
 # función principal
 def main(option):
+    def login(opcion):
+        while option != 0:
+        print("\n***************************")
+        print("*       Opciones:         *")
+        print("***************************")
+        print("1.- Registarse")
+        print("2.- Log-in")
+        print("0.- Salir")
+        leer = input("Ingrese una opción: ")
+         if (read.isnumeric()):
+            opcion = int(leer)
+        try:
+            acciones(opcion)()
+        except TypeError:
+            print(f'Option {opcion}')
+            
+	while ok:
+		if ok in ('S','s','si','SI'):
+			print("Bienvenido al sistema de registros")
+			print(' --------------------------------')
+			registro_de_usuarios()
+			break
+		elif ok in ('N','n','no','NO'):
+			print("La proxima sera")
+			break
+		else:
+			print ("Opcion no valida")
+			return nuevo_registro()
+ 
     while option != 0:
         print("\n***************************")
         print("*       Opciones:         *")

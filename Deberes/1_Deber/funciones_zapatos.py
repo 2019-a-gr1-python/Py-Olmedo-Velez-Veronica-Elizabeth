@@ -1,6 +1,32 @@
 import manejo_archivos
 import transformar
 
+def anadir_proveedor():
+    print("\n***************************")
+    print("*     Añadir proveedor:   *")
+    print("***************************")
+    codigo = input("Ingrese id del proveedor: ")
+    cod = input("Ingrese codigo de zapato: ")
+    nombre = input("Ingrese nombre: ")
+    ciudad = input("Ingrese cuidad: ")
+    telf = input("Ingrese teléfono: ")
+    proveedor = codigo + ";" + cod + ";" + nombre + ";" + ciudad + ";" + telf
+    manejo_archivos.agregar_a_archivo('./proveedores.txt', 'a', proveedor)
+
+def obtener_lista_proveedores():
+    archivo_proveedor = manejo_archivos.leer_archivos('./proveedores.txt')
+    proveedor = []
+    for cadena in archivo_proveedor:
+        proveedor.append(transformar.cadenatexto_a_diccionarioproveedor(cadena))
+    return proveedor
+
+def guardar_listadediccionarios_como_listadecadenadetexto(lista):
+    lista_cadenas = []
+    for proveedor in lista:
+        cadena = transformar.diccioanrioproveedor_a_cadenatexto(proveedor)
+        lista_cadenas.append(cadena)
+    manejo_archivos.agregar_a_archivo('./proveedores.txt', 'w', *lista_cadenas)
+
 def anadir_zapato():
     print("\n***************************")
     print("*     Añadir zapato:      *")
