@@ -4,3 +4,4 @@
 4;Running;Nike;38;Gris y Negro;150.0
 5;Casuales;Jupiter;43;Negro;349.0
 6;Bailarina;Armani;37;Rosado;69.4
+7;Bailarina;Armani;37;Azul;30.90
