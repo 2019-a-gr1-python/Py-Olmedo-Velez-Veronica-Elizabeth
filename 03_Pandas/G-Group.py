@@ -74,17 +74,24 @@ def transformar_df(df):
     nuevo_df_transformado = pd.concat(arreglo_df_grupo)
     return nuevo_df_transformado
         
-        
+
+#Para tener los titulos      
 seccion_df_t = transformar_df(seccion_df)        
         
+df_agrupado_titulo = df.groupby('title')
 
+print(df_agrupado_titulo.size())
+print(type(df_agrupado_titulo.size()))
 
-
+#Titulos ordenados
+serie_titulos = df_agrupado_titulo.size().sort_values()
+        
+#Titulos ordenados acendentemente
+serie_titulos = df_agrupado_titulo.size().sort_values(ascending=False)      
         
         
-        
-        
-        
+#Filtrado de Dataframe
+      
         
         
         
