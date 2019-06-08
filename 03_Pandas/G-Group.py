@@ -74,25 +74,44 @@ def transformar_df(df):
     nuevo_df_transformado = pd.concat(arreglo_df_grupo)
     return nuevo_df_transformado
         
-        
+
+#Para tener los titulos      
 seccion_df_t = transformar_df(seccion_df)        
         
+df_agrupado_titulo = df.groupby('title')
 
+#size devuelve la serie 
 
+print(df_agrupado_titulo.size())
+print(type(df_agrupado_titulo.size()))
 
+#Titulos ordenados
+serie_titulos = df_agrupado_titulo.size().sort_values()
+        
+#Titulos ordenados acendentemente
+serie_titulos = df_agrupado_titulo.size().sort_values(ascending=False)      
         
         
+#Filtrado de Dataframe
+
+df_filtrado = df.filter(items=["artis","title"])   
+        
+condicion = lambda x: len(x.index) > 1
+
+#Se obtiene el dataframe sin los titulos duplicados
+df_titulos_duplicados = df_agrupado_titulo.filter(condicion)
+
+#Ordenados por titulos duplicados
+resultado = df_titulos_duplicados.sort_values('title')
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
+resultado = df_titulos_duplicados.sort_values('title',inplace=True)        
+      
+#Agrupado por año
+
+df_agrupado_ano= df.groupby('year') 
+ano = df_agrupado_ano.size()     
+       
         
         
         
