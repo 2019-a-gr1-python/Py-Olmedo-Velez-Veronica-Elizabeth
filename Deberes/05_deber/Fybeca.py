@@ -83,5 +83,5 @@ print(df_completo.loc[df_completo['Precio'] == df_completo['Precio'].max()])
 #Saca el valor minimo del df
 df_minimo= df_completo.values.min()
 
-print(df_completo.loc[df_completo['Precio'] == df_completo['Precio'].mini()])
+print(df_completo.loc[df_completo['Precio'] == df_completo['Precio'].min()])
 
