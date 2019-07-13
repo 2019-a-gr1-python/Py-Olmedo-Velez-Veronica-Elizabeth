@@ -1,7 +1,7 @@
 import scrapy
 from python_03.items import ProductoFybeca
 from scrapy.loader import ItemLoader
-#from scrapy.loader.processors import TakeFirst
+from scrapy.loader.processors import TakeFirst
 
 
 class AraniaProductosFybeca(scrapy.Spider):
