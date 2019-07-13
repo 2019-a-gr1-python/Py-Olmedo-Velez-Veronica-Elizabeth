@@ -2,7 +2,7 @@ import scrapy
 from scrapy.spiders import CSVFeedSpider
 
 # Spider
-# CrawlSpider
+# CrawlSpider
 # CSVFeedSpider
 
 class VinosArania(CSVFeedSpider):
@@ -16,7 +16,6 @@ class VinosArania(CSVFeedSpider):
 
     quotechar = '"'
 
-    #Cabeceras
     headers = [
         'fixed density',
         'volatile acidity',
@@ -30,9 +29,7 @@ class VinosArania(CSVFeedSpider):
         'sulphates',
         'alcohol',
         'quality'
-        ]
-    
-    def parse_row(self, response ,row):
-        print('pH =' , row['pH'])
-           
-        
+    ]
+
+    def parse_row(self, response, row):
+        print('ph = ',row['pH'])
